@@ -18,7 +18,7 @@ async function TestRequest() {
     url: https://api.myapp.com/register
     body: ${{ email: 'test@test.com', password: 'secret' }}
     headers: ${{ Authorization: 'Bearer: token' }}
-  
+  `
 }
 ```
 
