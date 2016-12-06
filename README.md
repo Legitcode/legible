@@ -1,6 +1,6 @@
 ##Legible
 
-Prrof of concept at making http requests easier to work with in JS / Node. This wraps the fetch api.
+Proof of concept at making http requests easier to work with in JS / Node. This wraps the fetch api.
 
 ```
 npm install legible --save
