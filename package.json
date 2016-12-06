@@ -1,0 +1,24 @@
+{
+  "name": "legible",
+  "version": "0.0.1",
+  "description": "cleanly code your api requests",
+  "main": "index.js",
+  "scripts": {
+    "test": " "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/zackify/legible.git"
+  },
+  "keywords": [
+    "request",
+    "fetch",
+    "http"
+  ],
+  "author": "Zach Silveira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zackify/legible/issues"
+  },
+  "homepage": "https://github.com/zackify/legible#readme"
+}
