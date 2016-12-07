@@ -28,29 +28,21 @@ Using template strings, we can pull out variables easily and keep requests as `l
 
 ```js
 //api library
-
-function register() {
-  //headers get merged on every call to this
-  return { 
+tweets.js
+export { 
+  register: `
     url: 'https://api.twitter.com/register', 
-    headers: { method: 'POST' } 
-  }
-}
-
-function tweets() {
-  //headers get merged on every call to this
-  return { 
-    url: 'https://api.twitter.com/register', 
-    headers: {} 
-  }
-}
-
-export { tweets, register }
+    headers: ${{ method: 'POST' }} 
+  `,
+  tweets: `
+    url: https://api.twitter.com/register, 
+  `,
+ }
 
 //using the library
 
 import request from 'legible'
-import methods from 'twitter-api-wrapper-above'
+import methods from './tweets'
 
 request.attach('twitter', methods)
 
