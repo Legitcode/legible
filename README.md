@@ -14,17 +14,17 @@ A request library using template literals. Making requests has never been so str
 import request from 'legible'
 
 async function TestRequest() {
+  let body = { 
+    email: 'test@test.com', 
+    password: 'secret' 
+  }
+  
   let response = await request`
     url: https://api.myapp.com/register
-    
-    body: ${{ 
-      email: 'test@test.com', 
-      password: 'secret' 
-    }}
-    
+    body: ${body}
     headers: ${{ 
       Authorization: 'Bearer: token' 
-     }}
+    }}
   `
 }
 ```
