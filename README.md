@@ -16,8 +16,15 @@ import request from 'legible'
 async function TestRequest() {
   let response = await request`
     url: https://api.myapp.com/register
-    body: ${{ email: 'test@test.com', password: 'secret' }}
-    headers: ${{ Authorization: 'Bearer: token' }}
+    
+    body: ${{ 
+      email: 'test@test.com', 
+      password: 'secret' 
+    }}
+    
+    headers: ${{ 
+      Authorization: 'Bearer: token' 
+     }}
   `
 }
 ```
@@ -27,12 +34,13 @@ async function TestRequest() {
 Using template strings, we can pull out variables easily and keep requests as `legible` as possible. Imagine splitting out your code like this using api libraries that include requests like so:
 
 ```js
-//api library
-tweets.js
+//api library tweets.js
 export { 
   register: `
     url: 'https://api.twitter.com/register', 
-    headers: ${{ method: 'POST' }} 
+    headers: ${{ 
+      method: 'POST' 
+    }} 
   `,
   tweets: `
     url: https://api.twitter.com/register, 
