@@ -1,0 +1,22 @@
+{
+  "projectName": "legible",
+  "projectOwner": "Legitcode",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "contributors": [
+    {
+      "login": "zackify",
+      "name": "Zach Silveira",
+      "avatar_url": "https://avatars.githubusercontent.com/u/449136?v=3",
+      "profile": "http://reactjsnews.com",
+      "contributions": [
+        "code",
+        "doc",
+        "review"
+      ]
+    }
+  ]
+}
