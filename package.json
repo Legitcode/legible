@@ -4,7 +4,8 @@
   "description": "cleanly code your api requests",
   "main": "dist/index.js",
   "scripts": {
-    "test": "mocha --require babel-register --require tests/setup tests/unit --recursive",
+    "lint": "standard",
+    "test": "npm run lint && mocha --require babel-register --require tests/setup tests/unit --recursive",
     "build": "babel src --out-dir dist"
   },
   "repository": {
@@ -29,9 +30,13 @@
     "babel-preset-latest": "^6.16.0",
     "babel-register": "^6.18.0",
     "chai": "^3.5.0",
-    "mocha": "^3.2.0"
+    "mocha": "^3.2.0",
+    "standard": "^8.6.0"
   },
   "dependencies": {
     "isomorphic-fetch": "^2.2.1"
+  },
+  "standard": {
+    "globals": [ "describe", "it", "expect" ]
   }
 }
