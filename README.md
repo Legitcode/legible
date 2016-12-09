@@ -2,6 +2,8 @@
 
 ##Legible
 
+[See my blog post on why I made this](https://zach.codes/human-readable-ajax-requests/)
+
 Proof of concept at making http requests easier to work with in JS / Node. This wraps the fetch api.
 
 ```
