@@ -1,8 +1,8 @@
 {
   "presets": [
-    "es2015"
+    "latest"
   ],
   "plugins": [
-    "transform-async-to-generator",
+    "transform-object-rest-spread",
   ]
 }
