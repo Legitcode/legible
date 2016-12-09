@@ -1,5 +1,4 @@
-[![CircleCI](https://circleci.com/gh/zackify/legible.svg?style=svg&circle-token=9e3b88eaa3fa2ee84578f0375ee66ad3bc6751fe)](https://circleci.com/gh/zackify/legible)
-
+[![CircleCI](https://circleci.com/gh/Legitcode/legible.svg?style=svg)](https://circleci.com/gh/Legitcode/legible)
 ##Legible
 
 [See my blog post on why I made this](https://zach.codes/human-readable-ajax-requests/)
