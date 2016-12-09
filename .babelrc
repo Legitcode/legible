@@ -3,9 +3,6 @@
     "es2015"
   ],
   "plugins": [
-    "transform-class-properties",
-    "transform-object-rest-spread",
-    "transform-async-functions",
-    "transform-regenerator",
+    "transform-async-to-generator",
   ]
 }

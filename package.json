@@ -1,6 +1,6 @@
 {
   "name": "legible",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "cleanly code your api requests",
   "main": "dist/index.js",
   "scripts": {
@@ -23,10 +23,7 @@
   },
   "homepage": "https://github.com/zackify/legible#readme",
   "devDependencies": {
-    "babel-plugin-transform-async-functions": "^6.8.0",
-    "babel-plugin-transform-class-properties": "^6.18.0",
-    "babel-plugin-transform-object-rest-spread": "^6.16.0",
-    "babel-plugin-transform-regenerator": "^6.16.1",
+    "babel-plugin-transform-async-to-generator": "^6.16.0",
     "babel-polyfill": "^6.20.0",
     "babel-preset-es2015": "^6.16.0",
     "babel-register": "^6.18.0",
