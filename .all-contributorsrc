@@ -1,0 +1,32 @@
+{
+  "projectName": "legible",
+  "projectOwner": "Legitcode",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "contributors": [
+    {
+      "login": "zackify",
+      "name": "Zach Silveira",
+      "avatar_url": "https://avatars.githubusercontent.com/u/449136?v=3",
+      "profile": "http://reactjsnews.com",
+      "contributions": [
+        "code",
+        "doc",
+        "review"
+      ]
+    },
+    {
+      "login": "raygesualdo",
+      "name": "Ray Gesualdo",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5465958?v=3",
+      "profile": "https://github.com/raygesualdo",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    }
+  ]
+}

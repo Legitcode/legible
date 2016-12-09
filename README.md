@@ -1,4 +1,5 @@
 [![CircleCI](https://circleci.com/gh/Legitcode/legible.svg?style=svg)](https://circleci.com/gh/Legitcode/legible)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)
 ##Legible
 
 [See my blog post on why I made this](https://zach.codes/human-readable-ajax-requests/)
@@ -84,3 +85,14 @@ request.middleware({
   }
 })
 ```
+
+## Contributors
+
+Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+| [<img src="https://avatars.githubusercontent.com/u/449136?v=3" width="100px;"/><br /><sub>Zach Silveira</sub>](http://reactjsnews.com)<br />[💻](https://github.com/Legitcode/legible/commits?author=zackify) [📖](https://github.com/Legitcode/legible/commits?author=zackify) 👀 | [<img src="https://avatars.githubusercontent.com/u/5465958?v=3" width="100px;"/><br /><sub>Ray Gesualdo</sub>](https://github.com/raygesualdo)<br />[💻](https://github.com/Legitcode/legible/commits?author=raygesualdo) [📖](https://github.com/Legitcode/legible/commits?author=raygesualdo) |
+| :---: | :---: |
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!
