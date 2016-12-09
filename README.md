@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/zackify/legible.svg?style=svg&circle-token=9e3b88eaa3fa2ee84578f0375ee66ad3bc6751fe)](https://circleci.com/gh/zackify/legible)
+
 ##Legible
 
 Proof of concept at making http requests easier to work with in JS / Node. This wraps the fetch api.
@@ -21,6 +23,7 @@ async function TestRequest() {
   
   let response = await request`
     url: https://api.myapp.com/register
+    method: POST
     body: ${body}
     headers: ${{ 
       Authorization: 'Bearer: token' 
@@ -31,18 +34,22 @@ async function TestRequest() {
 
 ##Why Legible?
 
+**Coming Soon** The following isn't implemented yet.
+
+
 Using template strings, we can pull out variables easily and keep requests as `legible` as possible. Imagine splitting out your code like this using api libraries that include requests like so:
 
 ```js
+import { requestable } from 'legible'
 //api library tweets.js
 export { 
-  register: `
+  register: requestable`
     url: 'https://api.twitter.com/register', 
     headers: ${{ 
       method: 'POST' 
     }} 
   `,
-  tweets: `
+  tweets: requestable`
     url: https://api.twitter.com/register, 
   `,
  }
@@ -60,6 +67,8 @@ request.twitter.register`
 ```
 
 ###Middleware
+
+**Coming Soon** The following isn't implemented yet.
 
 
 ```js

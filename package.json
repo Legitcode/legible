@@ -1,10 +1,11 @@
 {
   "name": "legible",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "cleanly code your api requests",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": " "
+    "test": "mocha --require babel-register --require tests/setup tests/unit --recursive",
+    "build": "babel src --out-dir dist"
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,19 @@
   "bugs": {
     "url": "https://github.com/zackify/legible/issues"
   },
-  "homepage": "https://github.com/zackify/legible#readme"
+  "homepage": "https://github.com/zackify/legible#readme",
+  "devDependencies": {
+    "babel-plugin-transform-async-functions": "^6.8.0",
+    "babel-plugin-transform-class-properties": "^6.18.0",
+    "babel-plugin-transform-object-rest-spread": "^6.16.0",
+    "babel-plugin-transform-regenerator": "^6.16.1",
+    "babel-polyfill": "^6.20.0",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-register": "^6.18.0",
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  },
+  "dependencies": {
+    "isomorphic-fetch": "^2.2.1"
+  }
 }
