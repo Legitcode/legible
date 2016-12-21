@@ -10,7 +10,7 @@ Proof of concept at making http requests easier to work with in JS / Node. This 
 npm install legible --save
 ```
 
-A request library using template literals. Making requests has never been so straight forward! Make it easy for users to adopt your api, document it using this library, and everyone will understand making requests. 
+A request library using template literals. Making requests has never been so straight forward! Make it easy for users to adopt your api, document it using this library, and everyone will understand making requests.
 
 ###Example
 
@@ -18,17 +18,17 @@ A request library using template literals. Making requests has never been so str
 import request from 'legible'
 
 async function TestRequest() {
-  let body = { 
-    email: 'test@test.com', 
-    password: 'secret' 
+  let body = {
+    email: 'test@test.com',
+    password: 'secret'
   }
-  
+
   let response = await request`
     url: https://api.myapp.com/register
     method: POST
     body: ${body}
-    headers: ${{ 
-      Authorization: 'Bearer: token' 
+    headers: ${{
+      Authorization: 'Bearer: token'
     }}
   `
 }
@@ -36,35 +36,26 @@ async function TestRequest() {
 
 ##Why Legible?
 
-**Coming Soon** The following isn't implemented yet.
+**New in 0.2.0!**
 
 
 Using template strings, we can pull out variables easily and keep requests as `legible` as possible. Imagine splitting out your code like this using api libraries that include requests like so:
 
 ```js
-import { requestable } from 'legible'
-//api library tweets.js
-export { 
-  register: requestable`
-    url: 'https://api.twitter.com/register', 
-    headers: ${{ 
-      method: 'POST' 
-    }} 
-  `,
-  tweets: requestable`
-    url: https://api.twitter.com/register, 
-  `,
- }
+import { partial } from 'legible'
 
-//using the library
+const twitter = {
+  register: partial`
+    url: https://api.twitter.com/register,
+    method: POST
+  `
+}
 
-import request from 'legible'
-import methods from './tweets'
-
-request.attach('twitter', methods)
-
-request.twitter.register`
-  body: ${{ email: 'test@test.com', password: 'Tester' }}
+twitter.register`
+  body: ${{
+    email: 'test@test.com',
+    password: 'Tester'
+  }}
 `
 ```
 
