@@ -1,10 +1,10 @@
 export default (body) => {
-  // Handle emtpy case
+  // Handle empty case
   if (!body) return null
   // Handle FormData
   if (body instanceof FormData) return body
   try {
-    // Handle pre-stringified JSON
+    // Handle already stringified JSON
     JSON.parse(body)
     return body
   } catch (err) {
