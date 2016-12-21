@@ -1,3 +1,5 @@
+import processBody from './body'
+
 /*
   Take in raw query string and
   return a fetch api compatible object
@@ -45,7 +47,7 @@ export default (strings, vars) => {
     url,
     options: {
       method: method || 'GET',
-      body: body ? JSON.stringify(body) : null,
+      body: processBody(body),
       ...options
     }
   }
