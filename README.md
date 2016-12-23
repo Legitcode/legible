@@ -34,7 +34,7 @@ async function TestRequest() {
 }
 ```
 
-##Why Legible?
+##Partial Requests
 
 **New in 0.2.0!**
 
