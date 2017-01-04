@@ -1,4 +1,4 @@
-import fetch from 'isomorphic-fetch'
+import fetch from './utilities/fetch'
 import normalize from './utilities/normalize'
 
 /*
@@ -12,12 +12,8 @@ export default (strings, ...vars) => {
   return (strings, ...vars) => {
     let finalData = normalize(strings, vars)
     let mergedOptions = { ...options, ...finalData.options }
+    let finalUrl = finalData.url || url
 
-    return new Promise((resolve, reject) => {
-      fetch(finalData.url || url, mergedOptions)
-      .then(response => response.json())
-      .then(json => resolve(json))
-      .catch(error => reject(error))
-    })
+    return fetch(finalUrl, mergedOptions)
   }
 }
