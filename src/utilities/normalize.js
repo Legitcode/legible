@@ -5,7 +5,7 @@ import processBody from './body'
   return a fetch api compatible object
 */
 
-const buildObjectFromTag = (strings, vars) => {
+const buildObjectFromTag = (strings, vars, partial) => {
   const namespace = 'legible-request-var-'
   return strings
     // First, add namespaced placeholders to elements in `strings`
@@ -32,6 +32,9 @@ const buildObjectFromTag = (strings, vars) => {
       // Get the index at the end of the namespaced string
       const index = parseInt(value.replace(namespace, ''), 10)
       // Return an array of the object key and replaced value from `vars`
+      if (partial.url && key === 'url' && typeof vars[index] === 'function') {
+        return [key, vars[index](partial.url)]
+      }
       return [key, vars[index]]
     })
     // Convert to object
@@ -40,8 +43,8 @@ const buildObjectFromTag = (strings, vars) => {
     }, {})
 }
 
-export default (strings, vars) => {
-  const { url, method, body, ...options } = buildObjectFromTag(strings, vars)
+export default (strings, vars, partial = {}) => {
+  const { url, method, body, ...options } = buildObjectFromTag(strings, vars, partial)
 
   return {
     url,
