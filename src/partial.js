@@ -7,12 +7,12 @@ import normalize from './utilities/normalize'
 */
 
 export default (strings, ...vars) => {
-  let { options, url } = normalize(strings, vars)
+  let partial = normalize(strings, vars)
 
   return (strings, ...vars) => {
-    let finalData = normalize(strings, vars)
-    let mergedOptions = { ...options, ...finalData.options }
-    let finalUrl = finalData.url || url
+    let { options, url } = normalize(strings, vars, partial)
+    let mergedOptions = { ...partial.options, ...options }
+    let finalUrl = url || partial.url
 
     return fetch(finalUrl, mergedOptions)
   }

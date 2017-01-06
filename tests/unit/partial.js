@@ -31,4 +31,19 @@ describe('partial', () => {
     `
     expect(response.country_code).to.equal('US')
   })
+
+  it('passes partial url', async function () {
+    let test = partial`
+      url: /test
+      method: POST
+    `
+
+    await test`
+      url: ${url => {
+        expect(url).to.equal('/test')
+        return 'https://freegeoip.net/json/github.com'
+      }}
+      method: GET
+    `
+  })
 })
