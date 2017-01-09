@@ -46,12 +46,15 @@ const buildObjectFromTag = (strings, vars, partial) => {
 export default (strings, vars, partial = {}) => {
   const { url, method, body, ...options } = buildObjectFromTag(strings, vars, partial)
 
-  return {
+  let data = {
     url,
     options: {
-      method: method || 'GET',
-      body: processBody(body),
-      ...options
+      method,
+      ...options,
+      body: processBody(body)
     }
   }
+  if (!data.options.method) delete data.options.method
+
+  return data
 }

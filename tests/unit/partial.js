@@ -32,6 +32,22 @@ describe('partial', () => {
     expect(response.country_code).to.equal('US')
   })
 
+  it('keeps partial data if method is empty on calling', async function () {
+    const requests = {
+      login: partial`
+        url: https://freegeoip.net/json/github.com
+        method: POST
+      `
+    }
+    try {
+      await requests.login``
+    } catch (e) {
+      return expect(typeof e).to.equal('object')
+    }
+
+    expect(true).to.equal(false)
+  })
+
   it('passes partial url', async function () {
     let test = partial`
       url: /test
