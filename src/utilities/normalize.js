@@ -35,6 +35,10 @@ const buildObjectFromTag = (strings, vars, partial) => {
       if (partial.url && key === 'url' && typeof vars[index] === 'function') {
         return [key, vars[index](partial.url)]
       }
+
+      if (key === 'headers' && typeof vars[index] === 'function') {
+        return [key, vars[index](partial)]
+      }
       return [key, vars[index]]
     })
     // Convert to object
