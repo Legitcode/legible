@@ -55,6 +55,7 @@ export default (strings, vars, partial = {}) => {
     }
   }
   if (!data.options.method) delete data.options.method
+  if (!data.options.body) delete data.options.body
 
   return data
 }
