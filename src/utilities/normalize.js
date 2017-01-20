@@ -1,10 +1,18 @@
 import processBody from './body'
 
 /*
+  Methods that can be callbacks, ex:
+  headers: ${partialHeaders => }
+*/
+const callbackMethods = {
+  headers: ({ value, partial }) => value(partial),
+  url: ({ value, partial }) => value(partial.url)
+}
+
+/*
   Take in raw query string and
   return a fetch api compatible object
 */
-
 const buildObjectFromTag = (strings, vars, partial) => {
   const namespace = 'legible-request-var-'
   return strings
@@ -31,14 +39,15 @@ const buildObjectFromTag = (strings, vars, partial) => {
       if (!value.startsWith(namespace)) return [key, value]
       // Get the index at the end of the namespaced string
       const index = parseInt(value.replace(namespace, ''), 10)
-      // Return an array of the object key and replaced value from `vars`
-      if (partial.url && key === 'url' && typeof vars[index] === 'function') {
-        return [key, vars[index](partial.url)]
+
+      // run through any callback methods
+      if (callbackMethods[key] && typeof vars[index] === 'function') {
+        return [key, callbackMethods[key]({
+          value: vars[index],
+          partial
+        })]
       }
 
-      if (key === 'headers' && typeof vars[index] === 'function') {
-        return [key, vars[index](partial)]
-      }
       return [key, vars[index]]
     })
     // Convert to object
