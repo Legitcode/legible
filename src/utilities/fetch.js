@@ -5,9 +5,18 @@ export default (url, options = {}) => {
     fetch(url, options)
     .then(response => {
       if (options.onResponse) options.onResponse(response)
-      return response.json()
+
+      response.text()
+      .then(text => {
+        try {
+          resolve(JSON.parse(text))
+        } catch (e) {
+          resolve({})
+        }
+      })
+      .catch(function (error) {
+        return reject(error)
+      })
     })
-    .then(json => resolve(json))
-    .catch(error => reject(error))
   })
 }

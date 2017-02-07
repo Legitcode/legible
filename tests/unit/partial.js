@@ -39,13 +39,10 @@ describe('partial', () => {
         method: POST
       `
     }
-    try {
-      await requests.login``
-    } catch (e) {
-      return expect(typeof e).to.equal('object')
-    }
 
-    expect(true).to.equal(false)
+    let response = await requests.login``
+    expect(typeof response).to.equal('object')
+    expect(Object.keys(response).length).to.equal(0)
   })
 
   it('passes partial url', async function () {
