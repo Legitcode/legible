@@ -4,7 +4,7 @@ export default (url, options = {}) => {
   return new Promise((resolve, reject) => {
     fetch(url, options)
     .then(response => {
-      if (options.onResponse) options.onResponse(response)
+      if (options.onResponse && options.onResponse(response)) return false
 
       response.text()
       .then(text => {
