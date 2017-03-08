@@ -11,6 +11,10 @@ export default (strings, ...vars) => {
 
   return (strings, ...vars) => {
     let { options, url } = normalize(strings, vars, partial)
+
+    // block the request if a url callback returns false
+    if (url === false) return new Promise(resolve => resolve({ requestBlocked: true }))
+
     let headers = { ...partial.options.headers, ...options.headers }
     let mergedOptions = { ...partial.options, ...options, ...{ headers } }
     let finalUrl = url || partial.url
