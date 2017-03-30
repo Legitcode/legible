@@ -12,7 +12,7 @@ npm install legible --save
 
 A request library using template literals. Making requests has never been so straight forward! Make it easy for users to adopt your api, document it using this library, and everyone will understand making requests.
 
-###Example
+### Example
 
 ```js
 import request from 'legible'
@@ -34,7 +34,7 @@ async function TestRequest() {
 }
 ```
 
-##Partial Requests
+## Partial Requests
 
 **New in 0.2.0!**
 
@@ -59,7 +59,7 @@ twitter.register`
 `
 ```
 
-###Middleware
+### Middleware
 
 **Coming Soon** The following isn't implemented yet.
 
