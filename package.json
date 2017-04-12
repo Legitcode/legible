@@ -1,6 +1,6 @@
 {
   "name": "legible",
-  "version": "0.2.10",
+  "version": "0.2.11",
   "description": "cleanly code your api requests",
   "main": "dist/index.js",
   "scripts": {
