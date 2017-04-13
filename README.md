@@ -1,6 +1,6 @@
-[![CircleCI](https://circleci.com/gh/Legitcode/legible.svg?style=svg)](https://circleci.com/gh/Legitcode/legible)
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)
-##Legible
+[![CircleCI](https://circleci.com/gh/Legitcode/legible.svg?style=svg)](https://circleci.com/gh/Legitcode/legible)  
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)  
+## Legible  
 
 [See my blog post on why I made this](https://zach.codes/human-readable-ajax-requests/)
 
